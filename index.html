@@ -220,7 +220,7 @@ body{
 }
 
 /* =========================
-   JARDÍN DE TULIPANES
+   JARDÍN
 ========================= */
 
 .garden{
@@ -282,12 +282,8 @@ body{
 }
 
 @keyframes sway{
-  0%,100%{
-    rotate:-2deg;
-  }
-  50%{
-    rotate:3deg;
-  }
+  0%,100%{rotate:-2deg}
+  50%{rotate:3deg}
 }
 
 .stem{
@@ -336,7 +332,6 @@ body{
   height:58px;
   background:linear-gradient(135deg,#ffe64b,#f5b900);
   border-radius:20% 20% 48% 48%;
-  box-shadow:0 5px 12px rgba(190,130,0,.15);
 }
 
 .petal{
@@ -404,6 +399,78 @@ body{
   font-size:12px;
   opacity:.5;
   margin-top:10px;
+}
+
+/* =========================
+   FOTO
+========================= */
+
+.photo-section{
+  margin:110px auto;
+  text-align:center;
+}
+
+.photo-frame{
+  width:min(88vw,400px);
+  margin:35px auto 0;
+  padding:12px;
+  background:#fffdf0;
+  border:1px solid rgba(198,143,0,.25);
+  border-radius:25px;
+  box-shadow:0 20px 55px rgba(105,73,0,.18);
+  transform:rotate(-2deg);
+  transition:.5s;
+}
+
+.photo-frame:hover{
+  transform:rotate(0deg) scale(1.02);
+}
+
+.photo-frame img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:500px;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+.photo-caption{
+  padding:15px 5px 7px;
+  font-size:16px;
+  color:#9b7000;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-section{
+  margin:110px auto;
+  text-align:center;
+}
+
+.video-box{
+  width:min(92vw,650px);
+  margin:35px auto 0;
+  padding:10px;
+  background:rgba(255,255,255,.7);
+  border-radius:25px;
+  box-shadow:0 20px 55px rgba(105,73,0,.16);
+}
+
+.video-box video{
+  display:block;
+  width:100%;
+  max-height:550px;
+  border-radius:18px;
+  background:#f4df80;
+}
+
+.video-note{
+  margin-top:15px;
+  font-size:13px;
+  opacity:.55;
 }
 
 /* =========================
@@ -559,7 +626,7 @@ body{
 }
 
 /* =========================
-   FRASE FINAL
+   FINAL
 ========================= */
 
 .final{
@@ -667,7 +734,9 @@ body{
     margin-top:5px;
   }
 
-  .section{
+  .section,
+  .photo-section,
+  .video-section{
     margin:80px auto;
   }
 
@@ -773,6 +842,18 @@ body{
             <div class="leaf right"></div>
           </div>
 
+          <div class="tulip">
+            <div class="flower">
+              <div class="flower-body"></div>
+              <div class="petal one"></div>
+              <div class="petal two"></div>
+              <div class="petal three"></div>
+              <div class="flower-center"></div>
+            </div>
+            <div class="stem"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+          </div>
 
           <div class="tulip">
             <div class="flower">
@@ -787,6 +868,18 @@ body{
             <div class="leaf right"></div>
           </div>
 
+          <div class="tulip">
+            <div class="flower">
+              <div class="flower-body"></div>
+              <div class="petal one"></div>
+              <div class="petal two"></div>
+              <div class="petal three"></div>
+              <div class="flower-center"></div>
+            </div>
+            <div class="stem"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+          </div>
 
           <div class="tulip">
             <div class="flower">
@@ -801,7 +894,6 @@ body{
             <div class="leaf right"></div>
           </div>
 
-
           <div class="tulip">
             <div class="flower">
               <div class="flower-body"></div>
@@ -814,35 +906,6 @@ body{
             <div class="leaf left"></div>
             <div class="leaf right"></div>
           </div>
-
-
-          <div class="tulip">
-            <div class="flower">
-              <div class="flower-body"></div>
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="flower-center"></div>
-            </div>
-            <div class="stem"></div>
-            <div class="leaf left"></div>
-            <div class="leaf right"></div>
-          </div>
-
-
-          <div class="tulip">
-            <div class="flower">
-              <div class="flower-body"></div>
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="flower-center"></div>
-            </div>
-            <div class="stem"></div>
-            <div class="leaf left"></div>
-            <div class="leaf right"></div>
-          </div>
-
 
           <div class="tulip">
             <div class="flower">
@@ -865,11 +928,11 @@ body{
         <div class="music-box">
 
           <button class="music-btn" id="musicBtn">
-            🎵 Escuchar la canción
+            🎵 La música está sonando
           </button>
 
           <div class="music-note" id="musicText">
-            Toca aquí para que este momento tenga música. 💛
+            Flores Amarillas 💛
           </div>
 
         </div>
@@ -878,6 +941,100 @@ body{
 
     </section>
 
+
+    <!-- FOTO -->
+
+    <section class="photo-section">
+
+      <div class="top-label">
+        Una pequeña sorpresa
+      </div>
+
+      <h2 class="section-title">
+        Y aquí estás tú... 💛
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p class="section-text">
+        Porque quería que este pequeño jardín también
+        tuviera un recuerdo tuyo.
+      </p>
+
+      <div class="photo-frame">
+
+        <!--
+        CUANDO SUBAS TU FOTO A GITHUB,
+        LLÁMALA:
+
+        foto-lizbeth.jpg
+        -->
+
+        <img
+          src="foto-lizbeth.jpg"
+          alt="Una foto especial"
+          onerror="this.style.display='none'; this.parentElement.classList.add('photo-missing');"
+        >
+
+        <div class="photo-caption">
+          Una persona muy especial. 🌷
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VIDEO -->
+
+    <section class="video-section">
+
+      <div class="top-label">
+        Y todavía hay algo más...
+      </div>
+
+      <h2 class="section-title">
+        Un pequeño recuerdo 🎥
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p class="section-text">
+        Quería guardar también un pequeño momento
+        para que formara parte de este detalle.
+      </p>
+
+      <div class="video-box">
+
+        <!--
+        CUANDO SUBAS TU VIDEO A GITHUB,
+        LLÁMALO:
+
+        video-lizbeth.mp4
+        -->
+
+        <video
+          controls
+          muted
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="video-lizbeth.mp4"
+            type="video/mp4"
+          >
+
+          Tu navegador no puede reproducir este video.
+        </video>
+
+        <div class="video-note">
+          El video está sin audio para que continúe
+          sonando la música de fondo. 💛
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- SEGUNDA SECCIÓN -->
@@ -902,7 +1059,6 @@ body{
       </p>
 
     </section>
-
 
 
     <!-- SOBRE -->
@@ -985,7 +1141,6 @@ body{
     </section>
 
 
-
     <!-- FINAL -->
 
     <section class="final">
@@ -1025,7 +1180,7 @@ body{
      MÚSICA
 ========================= -->
 
-<audio id="music" loop>
+<audio id="music" loop preload="auto">
   <source src="flores-amarillas.mp3" type="audio/mpeg">
 </audio>
 
@@ -1033,22 +1188,37 @@ body{
 <script>
 
 /* =========================
-   PANTALLA INICIAL
+   PANTALLA INICIAL + MÚSICA
 ========================= */
 
 const intro = document.getElementById("intro");
 const openBtn = document.getElementById("openBtn");
+const music = document.getElementById("music");
 
 openBtn.addEventListener("click", function(){
 
-  intro.classList.add("hide");
+  /*
+    IMPORTANTE:
+    La música comienza justo al tocar "Abrir".
+    Esto funciona porque el navegador considera
+    este toque como una interacción del usuario.
+  */
 
-  setTimeout(function(){
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
-  },500);
+  music.volume = 0.65;
+
+  music.play().then(function(){
+
+    document.getElementById("musicText").textContent =
+      "Flores Amarillas está sonando para ti. 💛";
+
+  }).catch(function(){
+
+    document.getElementById("musicText").textContent =
+      "Toca el botón de música para comenzar. 💛";
+
+  });
+
+  intro.classList.add("hide");
 
 });
 
@@ -1076,9 +1246,6 @@ for(let i=0;i<35;i++){
   petal.style.opacity =
     (0.25 + Math.random()*0.55);
 
-  petal.style.transform =
-    "scale(" + (0.5 + Math.random()*1) + ")";
-
   petals.appendChild(petal);
 }
 
@@ -1093,8 +1260,11 @@ for(let i=0;i<18;i++){
 
   sparkle.className = "sparkle";
 
-  sparkle.style.left = Math.random()*100 + "%";
-  sparkle.style.top = Math.random()*100 + "%";
+  sparkle.style.left =
+    Math.random()*100 + "%";
+
+  sparkle.style.top =
+    Math.random()*100 + "%";
 
   sparkle.style.animationDelay =
     (-Math.random()*4) + "s";
@@ -1107,10 +1277,9 @@ for(let i=0;i<18;i++){
 
 
 /* =========================
-   MÚSICA
+   BOTÓN DE MÚSICA
 ========================= */
 
-const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 const musicText = document.getElementById("musicText");
 
@@ -1118,31 +1287,25 @@ musicBtn.addEventListener("click",function(){
 
   if(music.paused){
 
-    music.play()
-      .then(function(){
+    music.play().then(function(){
 
-        musicBtn.textContent = "⏸ Pausar canción";
+      musicBtn.textContent =
+        "⏸ Pausar canción";
 
-        musicText.textContent =
-          "La música está sonando para ti. 💛";
+      musicText.textContent =
+        "Flores Amarillas está sonando para ti. 💛";
 
-      })
-      .catch(function(){
-
-        musicText.textContent =
-          'No se pudo reproducir. Verifica que "flores-amarillas.mp3" esté junto a index.html.';
-
-      });
+    });
 
   }else{
 
     music.pause();
 
     musicBtn.textContent =
-      "🎵 Escuchar la canción";
+      "🎵 Continuar canción";
 
     musicText.textContent =
-      "Toca aquí para continuar la música. 💛";
+      "La música está en pausa.";
 
   }
 
@@ -1153,12 +1316,16 @@ musicBtn.addEventListener("click",function(){
    SOBRE
 ========================= */
 
-const envelope = document.getElementById("envelope");
-const letter = document.getElementById("letter");
+const envelope =
+  document.getElementById("envelope");
+
+const letter =
+  document.getElementById("letter");
 
 envelope.addEventListener("click",function(){
 
-  const isOpen = envelope.classList.toggle("open");
+  const isOpen =
+    envelope.classList.toggle("open");
 
   if(isOpen){
 
