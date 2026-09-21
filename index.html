@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Lizbeth 🌷💛</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Georgia,serif}
+body{overflow-x:hidden;background:linear-gradient(#fffbea,#fff1a8 55%,#f7d65b);color:#654700}
+.scene{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;padding:25px}
+.sun{position:fixed;width:190px;height:190px;border-radius:50%;right:-55px;top:-55px;background:#ffe36b;box-shadow:0 0 70px #fff2a9;opacity:.8}
+.card{position:relative;z-index:5;width:min(94vw,650px);padding:34px 24px 38px;text-align:center;background:rgba(255,255,255,.78);backdrop-filter:blur(9px);border-radius:30px;box-shadow:0 20px 60px rgba(116,82,0,.18);border:1px solid rgba(255,255,255,.9)}
+.eyebrow{font:12px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;opacity:.65}
+h1{font-size:clamp(46px,13vw,82px);margin:8px 0;color:#d79a00}
+.message{font-size:clamp(18px,4.5vw,23px);line-height:1.6;margin:12px auto 25px;max-width:530px}
+button{border:0;border-radius:999px;background:#e6ad12;color:white;padding:14px 27px;font-size:16px;cursor:pointer;box-shadow:0 8px 20px rgba(120,82,0,.2)}
+.hint{font:12px Arial,sans-serif;opacity:.55;margin-top:12px}
+.garden{height:180px;position:relative;margin:4px auto 5px;max-width:520px}
+.tulip{position:absolute;bottom:0;width:60px;height:175px;animation:sway 3s ease-in-out infinite}
+.tulip:nth-child(1){left:6%;transform:scale(.8);animation-delay:-1s}
+.tulip:nth-child(2){left:25%;transform:scale(1.05);animation-delay:-2s}
+.tulip:nth-child(3){left:47%;transform:scale(.92);animation-delay:-.5s}
+.tulip:nth-child(4){left:67%;transform:scale(1.12);animation-delay:-1.7s}
+.tulip:nth-child(5){left:85%;transform:scale(.76);animation-delay:-2.5s}
+.stem{position:absolute;left:28px;top:48px;width:5px;height:125px;background:#4f9844;border-radius:10px}
+.leaf{position:absolute;width:40px;height:75px;background:#65a94c;border-radius:100% 0 100% 0;top:98px}
+.leaf.l{left:2px;transform:rotate(-28deg)}
+.leaf.r{left:30px;transform:scaleX(-1) rotate(-28deg)}
+.head{position:absolute;z-index:2;left:8px;top:5px;width:48px;height:62px;background:#ffd329;border-radius:48% 48% 45% 45%}
+.head:before,.head:after{content:"";position:absolute;top:-9px;width:27px;height:38px;background:#ffd329;border-radius:80% 20% 80% 20%}
+.head:before{left:2px;transform:rotate(-20deg)}
+.head:after{right:2px;transform:scaleX(-1) rotate(-20deg)}
+.petal{position:absolute;z-index:3;width:22px;height:45px;background:#ffda35;border-radius:70% 30% 65% 35%;top:0}
+.petal.p1{left:12px;transform:rotate(-8deg)}
+.petal.p2{left:24px;transform:rotate(8deg)}
+@keyframes sway{0%,100%{margin-left:0}50%{margin-left:4px}}
+.fall{position:fixed;top:-30px;width:12px;height:22px;background:#ffd52d;border-radius:80% 20% 80% 20%;opacity:.65;animation:fall linear infinite;z-index:1}
+@keyframes fall{to{transform:translateY(115vh) rotate(520deg)}}
+.hidden{display:none}
+.reveal{animation:reveal 1.4s forwards}
+@keyframes reveal{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="scene">
+<div class="sun"></div>
+<div id="petals"></div>
+
+<main class="card">
+  <div class="eyebrow">Para alguien muy especial</div>
+  <h1>Lizbeth 🌷</h1>
+
+  <div class="garden">
+    <div class="tulip"><div class="head"><i class="petal p1"></i><i class="petal p2"></i></div><div class="stem"></div><i class="leaf l"></i><i class="leaf r"></i></div>
+    <div class="tulip"><div class="head"><i class="petal p1"></i><i class="petal p2"></i></div><div class="stem"></div><i class="leaf l"></i><i class="leaf r"></i></div>
+    <div class="tulip"><div class="head"><i class="petal p1"></i><i class="petal p2"></i></div><div class="stem"></div><i class="leaf l"></i><i class="leaf r"></i></div>
+    <div class="tulip"><div class="head"><i class="petal p1"></i><i class="petal p2"></i></div><div class="stem"></div><i class="leaf l"></i><i class="leaf r"></i></div>
+    <div class="tulip"><div class="head"><i class="petal p1"></i><i class="petal p2"></i></div><div class="stem"></div><i class="leaf l"></i><i class="leaf r"></i></div>
+  </div>
+
+  <p class="message">
+    Lizbeth, hoy quería regalarte algo diferente…<br>
+    un pequeño jardín de <b>tulipanes amarillos</b> hecho especialmente para ti. 💛<br><br>
+    Que cada uno de ellos te recuerde lo especial que eres
+    y te regale un poquito de alegría cada vez que los mires. 🌷
+  </p>
+
+  <button id="musicBtn">🌷 Escuchar</button>
+  <div class="hint">Toca el botón para comenzar la música.</div>
+  <p id="status" class="hidden"></p>
+</main>
+
+<audio id="music" loop>
+  <source src="flores-amarillas.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+const petals=document.getElementById('petals');
+for(let i=0;i<22;i++){
+ const p=document.createElement('div');
+ p.className='fall';
+ p.style.left=Math.random()*100+'%';
+ p.style.animationDuration=(7+Math.random()*9)+'s';
+ p.style.animationDelay=(-Math.random()*12)+'s';
+ petals.appendChild(p);
+}
+const music=document.getElementById('music');
+const btn=document.getElementById('musicBtn');
+btn.onclick=()=>{
+ if(music.paused){
+   music.play().then(()=>btn.textContent='⏸ Pausar').catch(()=>{
+     document.getElementById('status').classList.remove('hidden');
+     document.getElementById('status').textContent='Coloca "flores-amarillas.mp3" junto a este archivo para reproducir la música.';
+   });
+ }else{
+   music.pause(); btn.textContent='🌷 Escuchar';
+ }
+};
+</script>
+</body>
+</html>
